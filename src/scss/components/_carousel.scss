@@ -1,0 +1,35 @@
+.#{$bc}-carousel{
+    $carousel:&;
+   // border:solid 1px red;
+        display: block;
+    padding: 10px 40px;
+
+    .owl-item{
+        .item{
+            border: solid 1px $pri-color--hover-dk;
+            height: 200px;
+        }
+    }
+
+    #{$carousel}__nav{
+        &-left,&-right{
+            position: absolute;
+            font-size: 50px;
+            top: 40%;
+            cursor:pointer;
+            color: $pri-color;
+            transition: all  $tr-medium;
+
+            &:hover{
+                 color: $pri-color--hover-dk;
+            }
+        }
+        &-left{
+            left:0;
+        }
+        &-right{
+            right:0;
+        }
+    }
+
+}

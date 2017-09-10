@@ -1,0 +1,33 @@
+.#{$bc}-module{
+	display: block;
+	position: relative;
+	//height: 700px;
+	//border:solid 1px red;
+	padding: 15px 35px;
+	background: #2c3e50;
+	&-wrapper{
+
+	}
+
+	&__header{
+		font-weight: 100;
+		font-size: 30px;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		color: #fff;
+	}
+
+	&__content{			
+		padding: 40px 10px;			
+	}
+
+	&--gray{
+		background: #233140;
+	}
+
+	&--dark{
+		background:#10131a;
+	}
+
+}

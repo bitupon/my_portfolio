@@ -1,0 +1,120 @@
+.#{$bc}-header{
+	$header:&;
+    position: relative;
+    //padding: 20px;
+	z-index: 3;
+	height: 100%;
+
+	&__title{
+		color: #fff;
+		font-size: 40px;
+		text-transform: uppercase;
+		font-weight: 100;
+		margin: 0;
+		letter-spacing: 2px;
+		//animation: title 5s;
+
+		&s{
+			width: 400px;
+			margin: auto;
+			text-align: center;
+		}
+	}
+
+	&__stitle{
+		color: #ccc;
+		font-size: 12px;		
+		font-weight: 100;
+		margin: 0;
+	}
+
+	&__nav{
+		display: inline-block;
+		&-social{
+			@extend #list;
+			li{
+				float: left;
+				float: left;
+				margin-left: 10px;
+				cursor: pointer;
+				opacity: .8;
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&__left,&__right{
+		//border: solid 1px red;
+		height: 100%;
+		display: inline-block;
+		width: 50%;
+		float: left;
+		
+	}
+    &__left{
+		background-color: rgba(0,0,0,.6);
+    	border-left: solid 45px #000;
+	}
+
+	&__right{
+		background: rgba(255,255,255,0.8);		
+	}
+}
+
+
+// @-webkit-keyframes title {
+//   0%   { opacity: 0; }
+//   90%   { opacity: 0; }
+//   100% { opacity: 1; }
+// }
+// @-moz-keyframes title {
+//   0%   { opacity: 0; }
+//   90%   { opacity: 0; }
+//   100% { opacity: 1; }
+// }
+// @-o-keyframes title {
+//   0%   { opacity: 0; }
+//   90%   { opacity: 0; }
+//   100% { opacity: 1; }
+// }
+// @keyframes title{
+// 	0% { 
+// 		position: absolute;
+// 		top: 333px;
+// 		width: 100%;
+// 		left: 0;
+// 		right: 0;
+// 		font-size: 60px;
+// 		text-align: center;
+// 		letter-spacing: 20px;
+// 		opacity: 0;	
+// 	}
+//    40% { 
+// 		position: absolute;
+// 		//top: 333px;
+// 		//width: 100%;
+// 		//left: 0;
+// 		//right: 0;
+// 		font-size: 40px;
+// 		//text-align: center;
+// 		letter-spacing: 2px;
+// 		opacity: 1;	
+// 	}
+// 	90% { 
+// 		position: absolute;
+//     	top: 333px;
+// 		//position: relative;
+// 		//top:100px;
+		
+// 	}
+	
+// 	100% { 
+// 		//position: absolute;
+//     	top: -10px;
+// 		position: relative;
+// 		//top:100px;
+		
+// 	}
+// }

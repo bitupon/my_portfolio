@@ -1,0 +1,53 @@
+.#{$bc}-profile{
+    $profile:&;
+
+    &__pic{
+        //display: table-cell;
+        @include square(200px);
+        margin: auto;
+        
+        img{
+            @include square(100%);
+            border-radius: 200px;
+        }
+    }
+
+    &__content{
+        padding: 20px 10px 10px 10px;
+        color:#fff;
+        width: 700px;
+        margin: auto;
+        text-align: center;        
+       // border-bottom: solid 1px  $pri-color--hover-lt;
+
+        #{$profile}__content{
+
+        }
+
+        #{$profile}__intro{
+            font-size: 12px;
+        }
+
+        #{$profile}__social-links{
+            display: inline-block;
+            @extend #list;
+
+            li{
+                display: inline-block;
+                float: left;
+                width: 20px;
+                transition: width .5s;
+                cursor:pointer;
+                &:hover{
+                    //width:40px;
+                }
+            }
+
+            &:after{
+                content:"";
+                display: block;
+                clear: both;
+            }
+        }
+    }
+}

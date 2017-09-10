@@ -1,0 +1,50 @@
+.#{$bc}-activity{
+    $activity:&;
+    position: relative;
+    display: inline-block;
+    /* width: 120px; */
+    //height: 120px;
+    text-align: center;
+    margin: 0px 30px;
+    padding: 15px;
+    transition: all $tr-medium;
+    overflow: hidden;
+    cursor:pointer;
+    
+    &:hover{
+        background-color: rgba(0,0,0,0.2);
+
+        #{$activity}__logo{
+            color:#66fcf1;//#66fcf1;
+        }
+
+         #{$activity}__desc{
+            bottom: 0px;
+        }
+    }
+    &-wrapper{
+        padding:10px 40px;
+        &:after{
+			@extend #after-clear;
+		}
+    }
+
+    &__logo{
+        color:#fff;
+        font-size: 90px;
+         transition: all $tr-medium;
+    }
+
+    &__desc{
+        position: absolute;
+        color: #fff;
+        /* border: solid 1px red; */
+        width: 100%;
+        left: 0;
+        bottom: -40px;
+        text-transform: uppercase;
+        background: rgba(0,0,0,.4);
+        padding: 5px 0;
+        transition: all $tr-slow;
+    }
+}

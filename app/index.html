@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bitupon Chetia - Home</title>
+	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.carousel.min.css" />
+	<link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.theme.default.min.css" />
+	<link rel="stylesheet" href="css/main.css">
+
+	<script src="libs/jquery/dist/jquery.min.js"></script>
+	<script src="libs/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="libs/underscore/underscore.min.js"></script>
+	<script src="libs/moment/min/moment.min.js"></script>
+	<script src="libs/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="libs/owl.carousel/dist/owl.carousel.min.js"></script>
+
+	<!--<script src="https://use.fontawesome.com/0754190606.js"></script>-->
+</head>
+<body>
+	<main class="bc-main container-fluid">
+		<section class="bc-content m-t-6">
+			<div class="row justify-content-md-center">
+				<div class="col-md-5">
+					<table class="table table-hover table-inverse">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Project Name</th>							
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td><a href="">BOD</a></td>								
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td><a href="">BSG</a></td>								
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td><a href="">DGL</a></td>									
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td><a href="">IRA</a></td>									
+							</tr>
+							<tr>
+								<th scope="row">5</th>
+								<td><a href="">Kirro Theme 1</a></td>									
+							</tr>
+							<tr>
+								<th scope="row">6</th>
+								<td><a href="">Kirro Theme 2</a></td>									
+							</tr>
+							<tr>
+								<th scope="row">7</th>
+								<td><a href="">Kirro Theme 3</a></td>									
+							</tr>
+							<tr>
+								<th scope="row">8</th>
+								<td><a href="">VBank</a></td>									
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!--<section class="bc-cover">
+		<div class="bc-cover__top">
+			<div class="bc-cover__title">Bitupon Chetia</div>
+		</div>
+		<div class="bc-cover__bottom"></div>
+		
+	</section>-->
+		<script>
+		$(document).ready(function(){
+			$('.bc-hamburger__icon').on('click',function(e){
+				$('.bc-hamburger__icon').toggleClass('bc-hamburger__icon--close');
+				$('.bc-hamburger__menu').toggleClass('active');
+			})
+
+			$(document).on('click',function(e){
+				if(!$(e.target).hasClass('bc-hamburger__icon')){
+					$('.bc-hamburger__icon').removeClass('bc-hamburger__icon--close');
+					$('.bc-hamburger__menu').removeClass('active');
+				}
+				
+			})
+			
+			$('#carouselSkill').owlCarousel({
+				loop:true,
+				margin:10,
+				dots:false,
+				nav:true,
+				navContainerClass:"bc-carousel__nav",
+				navElement:"span",
+				navText:['',''],
+				navClass:['bc-carousel__nav-left fa fa-angle-left','bc-carousel__nav-right fa fa-angle-right'],
+				responsive:{
+					0:{
+						items:1
+					},
+					600:{
+						items:3
+					},
+					1000:{
+						items:5
+					}
+				}
+			})
+			
+
+		})
+	</script>
+</body>
+</html>
+

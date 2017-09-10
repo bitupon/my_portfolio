@@ -1,0 +1,40 @@
+.#{$bc}-block{
+	$block:&;
+    position: relative;
+    display: inline-block;
+	//float:left;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+    margin: 10px;
+	transition: all $tr-slow;
+	&-wrapper{
+		padding: 10px 40px;
+		&:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+
+	&:hover{
+		
+	}
+	
+
+	&__desc{
+		padding: 15px 10px;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background: rgba(0,0,0,.4);
+		color: #fff;
+	}
+
+	&__content{
+		img{
+			@include square(100%);
+		}
+	}
+}

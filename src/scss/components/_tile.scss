@@ -1,0 +1,38 @@
+.#{$bc}{
+	&-tile{
+		display: inline-block;
+		background: #233140;
+		@include square(120px);		
+		margin: 0 10px 10px 0;	
+		cursor: pointer;
+		border: solid 1px #1a252f;
+		text-decoration: none;
+		
+		&-wrapper{
+			display: inline-block;
+			@extend #list;
+			width:260px;
+
+			li{
+				float: left;
+			}
+		}
+
+		&__img{
+		    display: inline-block;
+    		height: 80px;
+    		width: 100%;
+		}
+
+		&__label{
+		    display: inline-block;
+			text-decoration: none;
+			text-align: center;
+			width: 100%;
+			text-transform: uppercase;
+			font-weight: 400;
+			letter-spacing: 2px;
+		}
+		
+	}	
+}

@@ -1,0 +1,56 @@
+.#{$bc}-hamburger{	
+    display: inline-block;
+    position: fixed;
+    top:20px;
+    left:20px;
+    &__icon{
+        position: relative;	
+        display: inline-block;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        font-size: 0;
+        vertical-align: 20px;
+        margin-right: 25px;
+
+        .line{
+            display: inline-block;
+            background-color: #fff;
+            height: 2px;
+            width: 100%;
+            margin-bottom: 6px;
+            transition: all .5s;
+        }
+
+        &--close{
+            .line{
+                display: none;
+                position: absolute;
+                top: 16px;
+                &:first-child{
+                    display: inline-block;
+                    -webkit-transform: rotate(45deg);
+                    transform: rotate(45deg);
+                }
+
+                &:last-child{
+                    display: inline-block;
+                    -webkit-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+
+                
+            }
+        }
+    }    
+
+    &__menu{
+        position: absolute;      
+        top:-1000px;
+        transition: all $tr-medium;
+
+        &.active{
+            top: 70px;
+        }
+    }
+}
