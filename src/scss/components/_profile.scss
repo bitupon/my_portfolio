@@ -1,8 +1,117 @@
 .#{$bc}-profile{
     $profile:&;
+	height: 100%;
 
-    &__pic{
-        //display: table-cell;
+    &__landing{
+        height: 100%;
+        background: url("./../assets/profile-cover.jpg") fixed no-repeat;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;   
+        -webkit-animation-name: MOVE-PROFILE-ENITY;          
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-duration: 1s;        
+        animation-name: ZOOM-IN-BG-COVER;  
+        animation-timing-function: ease;
+        animation-duration: 2s;
+        background-color: #3d3d3d;       
+    }
+
+    &__banner{
+        padding: 40px;
+        height: 100%;       
+        margin: 10px;
+        background: rgba(61,61,61,.8);
+        -webkit-animation-name: EASE-BANNER-BG;          
+        -webkit-animation-timing-function: ease;
+        -webkit-animation-duration: 1s;        
+        animation-name: EASE-BANNER-BG;  
+        animation-timing-function: ease;
+        animation-duration: 2s;       
+    }
+
+    &__info{      
+        text-align: center;
+        margin: 20px 0;
+
+        
+        p{
+            
+        }
+    }
+
+    &__name{
+        text-transform: uppercase;
+        color: #ccc;
+        font-size: 40px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        &::first-letter{
+            //font-weight: 400;
+            border-bottom: solid 1px #ccc;		
+        }
+    }
+
+    &__title{
+        text-transform: uppercase;
+        color: #ccc;
+        font-size: 30px;
+        font-weight: 100;
+        letter-spacing: 3px;
+    }
+
+    &__social{
+        @extend #list;
+        width: 180px;
+        margin: auto;
+        margin-top: 60px;
+
+        &:after{
+            @extend #after-clear;
+        }
+        &-item{
+            float: left;            
+            margin-right: 20px;
+
+            &:last-child{
+                margin-right: 0;
+            }
+
+            a{
+                display: block;
+                @include square(20px);            
+                background-size: 20px 20px;
+                opacity: 0.6;
+                transition: all $tr-medium;
+
+                &.facebook{
+                    background-image: url("../assets/icons/Facebook.svg");
+                }
+
+                &.linkedin{
+                    background-image: url("../assets/icons/Linkedin.svg");
+                }
+
+                &.twitter{
+                    background-image: url("../assets/icons/Twitter.svg");
+                }
+
+                &.github{
+                    background-image: url("../assets/icons/Github.svg");
+                }
+
+                &.mail{
+                    background-image: url("../assets/icons/Mail.svg");
+                }
+
+                &:hover{
+                    opacity: 1;
+                }
+            }
+          
+        }
+    }
+
+    &__pic{        
         @include square(200px);
         margin: auto;
         
@@ -12,42 +121,158 @@
         }
     }
 
-    &__content{
-        padding: 20px 10px 10px 10px;
-        color:#fff;
-        width: 700px;
-        margin: auto;
-        text-align: center;        
-       // border-bottom: solid 1px  $pri-color--hover-lt;
+    &__activity{
+        $activity:&;
+        position: relative;
+        float: left;
+        @include square(120px); 
+        margin: 15px;            
+        -webkit-animation-name: MOVE-PROFILE-ENITY;          
+        -webkit-animation-timing-function: ease;
+        animation-name: MOVE-PROFILE-ENITY;  
+        animation-timing-function: ease;
+        border:solid 2px #f47264;
+        cursor: pointer;
+        text-align: center;
+        transition: all $tr-medium;
 
-        #{$profile}__content{
-
+        &:nth-child(1),&:nth-child(5){
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
         }
 
-        #{$profile}__intro{
-            font-size: 12px;
+        &:nth-child(2),&:nth-child(4){
+            -webkit-animation-duration: 1.6s;
+            animation-duration: 1.6s;
         }
 
-        #{$profile}__social-links{
-            display: inline-block;
-            @extend #list;
+        &:nth-child(3){
+            -webkit-animation-duration: 0.5s;
+            animation-duration: 0.5s;
+        }
 
-            li{
-                display: inline-block;
-                float: left;
-                width: 20px;
-                transition: width .5s;
-                cursor:pointer;
-                &:hover{
-                    //width:40px;
-                }
+        &-logo{
+            @include square(50px);            
+            font-size: 40px!important;
+            margin-top: 15px;
+            color:#f47264;
+        }
+
+        &-title{
+            position: absolute;
+            display: block;
+            text-align: center;
+            width: 100%;
+            color: #f47264;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-weight: 100;
+            display: block;
+            text-align: center;
+            bottom: 15px;
+        }        
+
+        &:hover{
+            background-color: #f47264;
+            #{$activity}-title{
+                color: #fff!important;
             }
 
-            &:after{
-                content:"";
-                display: block;
-                clear: both;
+            #{$activity}-logo{
+                color: #fff!important;
             }
         }
     }
+
+    &__activities{
+        height: 150px;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        ul{
+            width: 750px;
+            margin: auto;
+            @extend #list;
+            &:after{
+                @extend #after-clear;
+            }
+        }
+       &-item{
+           
+       }
+    }
+
+    &__nav{
+        $profileNav:&;
+
+        position: fixed;
+        left:30px;
+        top:100px;
+        z-index: 1000;     
+
+        ul{
+            @extend #list;
+
+            li{             
+                margin-bottom: 10px;
+
+                #{$profileNav}-item{                   
+                    height: 6px;
+                    width:20px;                 
+                    display: inline-block;
+                    background: #fff;
+                    border:solid 1px #fff;
+                    position: relative;
+
+                    #{$profileNav}-title{
+                        //display: none;
+                        position: absolute;
+                        top: -6px;
+                        width: 140px;
+                        color: #fff;
+                        left: 36px;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        font-weight: 100;
+                        letter-spacing: 2px;
+                        transition: all $tr-medium;
+                        color: transparent;
+                    }
+                }
+
+                &.active{
+                    a{
+                         background: transparent;
+                    }
+                }
+
+                &:hover{
+                    #{$profileNav}-title{
+                        display: block;
+                        color: #fff;
+                        left: 26px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes MOVE-PROFILE-ENITY {
+	from {
+		-webkit-transform: translatey(40%);
+	}
+	to { 
+		-webkit-transform: translatey(0%);
+	}
+}
+
+@-webkit-keyframes EASE-BANNER-BG {
+	from {
+        background:#3d3d3d;
+	}
+	to { 
+        background: rgba(61,61,61,.8);
+	}
 }

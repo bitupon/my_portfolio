@@ -14,7 +14,7 @@
          clean([paths.scriptsMin]);
         return gulp.src(scriptsArr)
             .pipe(plugins.concat('scripts-all.js'))
-            .pipe(plugins.uglify())
+            //.pipe(plugins.uglify())
             .on('error', plugins.notify.onError(function (error) {
                 return 'An error occurred while concatenating scripts.\nLook in the console for details.\n' + error;
             }))

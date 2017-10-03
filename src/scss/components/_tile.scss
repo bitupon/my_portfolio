@@ -1,23 +1,14 @@
 .#{$bc}{
 	&-tile{
-		display: inline-block;
-		background: #233140;
-		@include square(120px);		
-		margin: 0 10px 10px 0;	
-		cursor: pointer;
-		border: solid 1px #1a252f;
+		display: inline-block;		
+		width: 100%;
+		height: 170px;
+		float: left;	
+		border-top:solid 1px #7ec8ed;
+		border-right:solid 1px #7ec8ed;	
+		cursor: pointer;	
 		text-decoration: none;
 		
-		&-wrapper{
-			display: inline-block;
-			@extend #list;
-			width:260px;
-
-			li{
-				float: left;
-			}
-		}
-
 		&__img{
 		    display: inline-block;
     		height: 80px;
@@ -32,6 +23,18 @@
 			text-transform: uppercase;
 			font-weight: 400;
 			letter-spacing: 2px;
+		}
+
+		&--blue{
+			background-color: #146892;
+		}
+
+		&--blue-lt{
+			background-color: #1674a3;
+		}
+
+		&--blue-dk{
+			background-color: #125c81;
 		}
 		
 	}	

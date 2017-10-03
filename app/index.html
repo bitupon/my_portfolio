@@ -5,20 +5,10 @@
 	<title>Bitupon Chetia - Home</title>
 	<link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="libs/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
-	<link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.carousel.min.css" />
-	<link rel="stylesheet" href="libs/owl.carousel/dist/assets/owl.theme.default.min.css" />
 	<link rel="stylesheet" href="css/main.css">
 
-	<script src="libs/jquery/dist/jquery.min.js"></script>
-	<script src="libs/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="libs/jquery/dist/jquery.min.js"></script>	
 	<script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="libs/underscore/underscore.min.js"></script>
-	<script src="libs/moment/min/moment.min.js"></script>
-	<script src="libs/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="libs/owl.carousel/dist/owl.carousel.min.js"></script>
-
-	<!--<script src="https://use.fontawesome.com/0754190606.js"></script>-->
 </head>
 <body>
 	<main class="bc-main container-fluid p-a-0">
@@ -26,59 +16,12 @@
 			<div class="row justify-content-md-center">
 				<div class="col-md-5" >
 					<a href="https://bituponchetia.com:8443"  class="bc-btn btn btn-lg btn-block">Login</a>
-					<a href="projects.html"  class="bc-btn btn btn-lg btn-block">Projects</a>
-					
+					<a href="projects.html"  class="bc-btn btn btn-lg btn-block">Projects</a>					
 				</div>
 			</div>
 		</section>
 	</main>
-	<!--<section class="bc-cover">
-		<div class="bc-cover__top">
-			<div class="bc-cover__title">Bitupon Chetia</div>
-		</div>
-		<div class="bc-cover__bottom"></div>
-		
-	</section>-->
-		<script>
-		$(document).ready(function(){
-			$('.bc-hamburger__icon').on('click',function(e){
-				$('.bc-hamburger__icon').toggleClass('bc-hamburger__icon--close');
-				$('.bc-hamburger__menu').toggleClass('active');
-			})
-
-			$(document).on('click',function(e){
-				if(!$(e.target).hasClass('bc-hamburger__icon')){
-					$('.bc-hamburger__icon').removeClass('bc-hamburger__icon--close');
-					$('.bc-hamburger__menu').removeClass('active');
-				}
-				
-			})
-			
-			$('#carouselSkill').owlCarousel({
-				loop:true,
-				margin:10,
-				dots:false,
-				nav:true,
-				navContainerClass:"bc-carousel__nav",
-				navElement:"span",
-				navText:['',''],
-				navClass:['bc-carousel__nav-left fa fa-angle-left','bc-carousel__nav-right fa fa-angle-right'],
-				responsive:{
-					0:{
-						items:1
-					},
-					600:{
-						items:3
-					},
-					1000:{
-						items:5
-					}
-				}
-			})
-			
-
-		})
-	</script>
+	
 </body>
 </html>
 

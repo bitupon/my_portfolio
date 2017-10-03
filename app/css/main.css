@@ -456,7 +456,7 @@ html, body {
   -o-user-select: none;
   user-select: none; }
 
-#list, .bc-header__nav-social, .bc-tile-wrapper, .bc-profile__content .bc-profile__social-links {
+#list, .bc-header__nav-social, .bc-profile__social, .bc-profile__activities ul, .bc-profile__nav ul {
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -466,7 +466,7 @@ html, body {
   text-overflow: ellipsis;
   overflow: hidden; }
 
-#after-clear, .bc-activity-wrapper:after {
+#after-clear, .bc-profile__social:after, .bc-profile__activities ul:after, .bc-activity-wrapper:after {
   content: "";
   display: block;
   clear: both; }
@@ -487,12 +487,6 @@ html, body {
 
 .f-height {
   height: 100%; }
-
-.bc-main {
-  height: 100%; }
-  .bc-main__landing {
-    height: 100%;
-    background: url("./../assets/profile.jpg") fixed no-repeat; }
 
 .bc-content {
   height: calc(100% - 100px); }
@@ -531,22 +525,22 @@ html, body {
 
 .bc-module {
   display: block;
-  position: relative;
-  padding: 15px 35px;
-  background: #2c3e50; }
-  .bc-module__header {
-    font-weight: 100;
-    font-size: 30px;
-    padding: 0;
-    margin: 0;
+  height: 100%;
+  width: 1200px;
+  margin: auto; }
+  .bc-module__title {
+    position: relative;
     text-align: center;
-    color: #fff; }
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: #444;
+    letter-spacing: 8px;
+    margin: 30px 0 0 0; }
+    .bc-module__title::first-letter {
+      border-bottom: solid 2px #fff; }
   .bc-module__content {
-    padding: 40px 10px; }
-  .bc-module--gray {
-    background: #233140; }
-  .bc-module--dark {
-    background: #10131a; }
+    padding-top: 25px; }
 
 .bc-cover {
   position: fixed;
@@ -581,6 +575,60 @@ html, body {
     top: -100%; }
   .bc-cover:hover1 .bc-cover__bottom {
     top: 150%; }
+
+.bc-slide {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  min-height: 700px;
+  top: 100%;
+  overflow: hidden;
+  height: 120%; }
+  .bc-slide--blue {
+    background-color: #7ec8ed;
+    z-index: 10; }
+    .bc-slide--blue .bc-slide__title {
+      color: #146892; }
+  .bc-slide--red {
+    background-color: #f47264;
+    z-index: 20; }
+    .bc-slide--red .bc-slide__title {
+      color: #af1c0c; }
+  .bc-slide--yellow {
+    background-color: #fad260;
+    z-index: 30; }
+    .bc-slide--yellow .bc-slide__title {
+      color: #916d05; }
+  .bc-slide--green {
+    background-color: #84cbc5;
+    z-index: 40; }
+    .bc-slide--green .bc-slide__title {
+      color: #29625d; }
+  .bc-slide--d-blue {
+    background-color: #1d69a7;
+    z-index: 50; }
+  .bc-slide--violet {
+    background-color: #878ad1;
+    z-index: 60; }
+  .bc-slide-d-violet {
+    background-color: #99597b;
+    z-index: 70; }
+  .bc-slide--orange {
+    background-color: #f59364;
+    z-index: 80; }
+  .bc-slide__wrapper {
+    border: solid 1px #ddd; }
+  .bc-slide__title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 100;
+    color: #444;
+    letter-spacing: 8px;
+    margin: 30px 0 0 0; }
+    .bc-slide__title::first-letter {
+      border-bottom: solid 2px #fff; }
 
 .bc-header {
   position: relative;
@@ -665,18 +713,13 @@ html, body {
 
 .bc-tile {
   display: inline-block;
-  background: #233140;
-  width: 120px;
-  height: 120px;
-  margin: 0 10px 10px 0;
+  width: 100%;
+  height: 170px;
+  float: left;
+  border-top: solid 1px #7ec8ed;
+  border-right: solid 1px #7ec8ed;
   cursor: pointer;
-  border: solid 1px #1a252f;
   text-decoration: none; }
-  .bc-tile-wrapper {
-    display: inline-block;
-    width: 260px; }
-    .bc-tile-wrapper li {
-      float: left; }
   .bc-tile__img {
     display: inline-block;
     height: 80px;
@@ -689,6 +732,12 @@ html, body {
     text-transform: uppercase;
     font-weight: 400;
     letter-spacing: 2px; }
+  .bc-tile--blue {
+    background-color: #146892; }
+  .bc-tile--blue-lt {
+    background-color: #1674a3; }
+  .bc-tile--blue-dk {
+    background-color: #125c81; }
 
 .bc-form-control {
   border-radius: 0;
@@ -727,35 +776,184 @@ html, body {
     color: #000;
     background-color: #66fcf1; }
 
-.bc-profile__pic {
-  width: 200px;
-  height: 200px;
-  margin: auto; }
-  .bc-profile__pic img {
-    width: 100%;
+.bc-profile {
+  height: 100%; }
+  .bc-profile__landing {
     height: 100%;
-    border-radius: 200px; }
-
-.bc-profile__content {
-  padding: 20px 10px 10px 10px;
-  color: #fff;
-  width: 700px;
-  margin: auto;
-  text-align: center; }
-  .bc-profile__content .bc-profile__intro {
-    font-size: 12px; }
-  .bc-profile__content .bc-profile__social-links {
-    display: inline-block; }
-    .bc-profile__content .bc-profile__social-links li {
-      display: inline-block;
+    background: url("./../assets/profile-cover.jpg") fixed no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-animation-name: MOVE-PROFILE-ENITY;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 1s;
+    animation-name: ZOOM-IN-BG-COVER;
+    animation-timing-function: ease;
+    animation-duration: 2s;
+    background-color: #3d3d3d; }
+  .bc-profile__banner {
+    padding: 40px;
+    height: 100%;
+    margin: 10px;
+    background: rgba(61, 61, 61, 0.8);
+    -webkit-animation-name: EASE-BANNER-BG;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 1s;
+    animation-name: EASE-BANNER-BG;
+    animation-timing-function: ease;
+    animation-duration: 2s; }
+  .bc-profile__info {
+    text-align: center;
+    margin: 20px 0; }
+  .bc-profile__name {
+    text-transform: uppercase;
+    color: #ccc;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 3px; }
+    .bc-profile__name::first-letter {
+      border-bottom: solid 1px #ccc; }
+  .bc-profile__title {
+    text-transform: uppercase;
+    color: #ccc;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 3px; }
+  .bc-profile__social {
+    width: 180px;
+    margin: auto;
+    margin-top: 60px; }
+    .bc-profile__social-item {
       float: left;
-      width: 20px;
-      transition: width .5s;
-      cursor: pointer; }
-    .bc-profile__content .bc-profile__social-links:after {
-      content: "";
+      margin-right: 20px; }
+      .bc-profile__social-item:last-child {
+        margin-right: 0; }
+      .bc-profile__social-item a {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+        opacity: 0.6;
+        transition: all 0.5s; }
+        .bc-profile__social-item a.facebook {
+          background-image: url("../assets/icons/Facebook.svg"); }
+        .bc-profile__social-item a.linkedin {
+          background-image: url("../assets/icons/Linkedin.svg"); }
+        .bc-profile__social-item a.twitter {
+          background-image: url("../assets/icons/Twitter.svg"); }
+        .bc-profile__social-item a.github {
+          background-image: url("../assets/icons/Github.svg"); }
+        .bc-profile__social-item a.mail {
+          background-image: url("../assets/icons/Mail.svg"); }
+        .bc-profile__social-item a:hover {
+          opacity: 1; }
+  .bc-profile__pic {
+    width: 200px;
+    height: 200px;
+    margin: auto; }
+    .bc-profile__pic img {
+      width: 100%;
+      height: 100%;
+      border-radius: 200px; }
+  .bc-profile__activity {
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 120px;
+    margin: 15px;
+    -webkit-animation-name: MOVE-PROFILE-ENITY;
+    -webkit-animation-timing-function: ease;
+    animation-name: MOVE-PROFILE-ENITY;
+    animation-timing-function: ease;
+    border: solid 2px #f47264;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s; }
+    .bc-profile__activity:nth-child(1), .bc-profile__activity:nth-child(5) {
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s; }
+    .bc-profile__activity:nth-child(2), .bc-profile__activity:nth-child(4) {
+      -webkit-animation-duration: 1.6s;
+      animation-duration: 1.6s; }
+    .bc-profile__activity:nth-child(3) {
+      -webkit-animation-duration: 0.5s;
+      animation-duration: 0.5s; }
+    .bc-profile__activity-logo {
+      width: 50px;
+      height: 50px;
+      font-size: 40px !important;
+      margin-top: 15px;
+      color: #f47264; }
+    .bc-profile__activity-title {
+      position: absolute;
       display: block;
-      clear: both; }
+      text-align: center;
+      width: 100%;
+      color: #f47264;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 100;
+      display: block;
+      text-align: center;
+      bottom: 15px; }
+    .bc-profile__activity:hover {
+      background-color: #f47264; }
+      .bc-profile__activity:hover .bc-profile__activity-title {
+        color: #fff !important; }
+      .bc-profile__activity:hover .bc-profile__activity-logo {
+        color: #fff !important; }
+  .bc-profile__activities {
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0; }
+    .bc-profile__activities ul {
+      width: 750px;
+      margin: auto; }
+  .bc-profile__nav {
+    position: fixed;
+    left: 30px;
+    top: 100px;
+    z-index: 1000; }
+    .bc-profile__nav ul li {
+      margin-bottom: 10px; }
+      .bc-profile__nav ul li .bc-profile__nav-item {
+        height: 6px;
+        width: 20px;
+        display: inline-block;
+        background: #fff;
+        border: solid 1px #fff;
+        position: relative; }
+        .bc-profile__nav ul li .bc-profile__nav-item .bc-profile__nav-title {
+          position: absolute;
+          top: -6px;
+          width: 140px;
+          color: #fff;
+          left: 36px;
+          text-transform: uppercase;
+          font-size: 10px;
+          font-weight: 100;
+          letter-spacing: 2px;
+          transition: all 0.5s;
+          color: transparent; }
+      .bc-profile__nav ul li.active a {
+        background: transparent; }
+      .bc-profile__nav ul li:hover .bc-profile__nav-title {
+        display: block;
+        color: #fff;
+        left: 26px; }
+
+@-webkit-keyframes MOVE-PROFILE-ENITY {
+  from {
+    -webkit-transform: translatey(40%); }
+  to {
+    -webkit-transform: translatey(0%); } }
+
+@-webkit-keyframes EASE-BANNER-BG {
+  from {
+    background: #3d3d3d; }
+  to {
+    background: rgba(61, 61, 61, 0.8); } }
 
 .bc-activity {
   position: relative;
