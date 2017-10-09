@@ -1,0 +1,95 @@
+
+.#{$bc}-timeline{    
+    position: relative;
+    margin-top: 60px;
+
+    &:before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-top:solid 1px #fff;
+        top:175px;
+    }
+
+    &__item{
+        $tmlineItem:&;
+        position: relative;      
+        height: 350px;
+        width: 150px;
+        float: left;
+        margin-left: 60px;
+      
+
+        &:nth-child(even){
+            #{$tmlineItem}-data{
+                top: auto;
+                bottom: 0;
+             
+                &:before{                   
+                    top: -36px;                   
+                }
+
+                &:after{                    
+                    top: -16px;                                   
+                }
+
+                > span{                   
+                    top: -68px;  
+                }
+            }            
+        }
+
+        &-data{           
+            position: absolute;
+            height: 150px;
+            min-width: 100;
+            top: 0;      
+            box-shadow: 1px 2px 3px #409991;             
+            transition: all $tr-medium;
+            border: solid 1px #fff;           
+            padding: 15px;
+            cursor:pointer;
+            background: #fff;
+            &:before{
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: solid 4px #fff;
+                top: 165px;
+                border-radius: 20px;
+                left: 62px;
+                box-shadow: 1px 2px 4px #409991;
+                background: #409991;
+            }
+
+             &:after{
+                content: "";
+                position: absolute;
+                width: 20px;
+                height: 16px;
+                border-left: solid 2px #fff;
+                top: 150px;               
+                left: 71px;
+            }
+
+            &:hover{             
+               background: #fff;//#4db4ab;
+            }
+
+            > span{
+                position: absolute;
+                top: 185px;
+                font-size: 20px;
+                letter-spacing: 2px;
+                font-weight: 100;
+                left: 50px;
+                color: #fff;
+            }
+        }
+
+        &-img{
+            height: 50px;
+        }
+    }
+}

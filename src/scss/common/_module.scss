@@ -10,17 +10,22 @@
 
 	&__title{
 		position: relative;
-		text-align: center;
-		font-size: 40px;
-		text-transform: uppercase;
+		//text-align: center;
+		//font-size: 40px;
+		//text-transform: uppercase;
 		font-weight: 100;
 		color: #444;
-		letter-spacing: 8px;
-		margin: 30px 0 0 0;
+		letter-spacing: 4px;
+		margin: 10px 0;
 
 		&::first-letter{			
-			border-bottom: solid 2px #fff;		
+			//border-bottom: solid 2px #fff;		
 		}		
+	}
+
+	&__desc{
+		padding-bottom: 20px;
+    	border-bottom: dashed 1px #abdbf3;
 	}
 
 	&__content{			

@@ -6,9 +6,7 @@
     min-height: 700px;
     top: 100%;
     overflow: hidden;
-    height: 120%;
-   
-
+    height: 120%;  
 
     &--blue{
         background-color: #7ec8ed;
@@ -62,6 +60,14 @@
         background-color: #f59364;
         z-index: 80;
    }
+
+   &--black{
+        background-color: #444444;
+        z-index: 90;
+         #{$slide}__title{
+            color: #ccc;
+        }
+   }
    
     &__wrapper{
         border:solid 1px #ddd;       
@@ -75,7 +81,7 @@
 		font-weight: 100;
 		color: #444;
 		letter-spacing: 8px;
-		margin: 30px 0 0 0;
+		padding: 30px 0 0 0;
 
 		&::first-letter{			
 			border-bottom: solid 2px #fff;		

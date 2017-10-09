@@ -257,6 +257,30 @@
             }
         }
     }
+
+    &__scroller{
+        position: fixed;
+        /* border: solid 1px red; */
+        width: 36px;
+        height: 44px;
+        bottom: 20px;
+        right: 20px;
+        background: url(../assets/icons/mouse-down.svg) no-repeat 100% 100%;
+        opacity: 1;
+        cursor:pointer;
+        transition: all $tr-medium;
+
+        -webkit-animation-name: SCROLLER;          
+        -webkit-animation-timing-function: ease-out;
+        -webkit-animation-duration: 1s;        
+        animation-name: SCROLLER;  
+        animation-timing-function: ease-out;
+        animation-duration: 2s;   
+        &:hover{
+            opacity: 0.7;
+            bottom: 15px;
+        }
+    }
 }
 
 @-webkit-keyframes MOVE-PROFILE-ENITY {
@@ -274,5 +298,18 @@
 	}
 	to { 
         background: rgba(61,61,61,.8);
+	}
+}
+
+@-webkit-keyframes SCROLLER {
+	0% {
+		-webkit-transform: translatex(200%);
+	}
+
+    50% {
+		-webkit-transform: translatex(200%);
+	}
+	100% { 
+		-webkit-transform: translatex(0%);
 	}
 }

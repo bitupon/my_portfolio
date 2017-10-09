@@ -530,15 +530,13 @@ html, body {
   margin: auto; }
   .bc-module__title {
     position: relative;
-    text-align: center;
-    font-size: 40px;
-    text-transform: uppercase;
     font-weight: 100;
     color: #444;
-    letter-spacing: 8px;
-    margin: 30px 0 0 0; }
-    .bc-module__title::first-letter {
-      border-bottom: solid 2px #fff; }
+    letter-spacing: 4px;
+    margin: 10px 0; }
+  .bc-module__desc {
+    padding-bottom: 20px;
+    border-bottom: dashed 1px #abdbf3; }
   .bc-module__content {
     padding-top: 25px; }
 
@@ -616,6 +614,11 @@ html, body {
   .bc-slide--orange {
     background-color: #f59364;
     z-index: 80; }
+  .bc-slide--black {
+    background-color: #444444;
+    z-index: 90; }
+    .bc-slide--black .bc-slide__title {
+      color: #ccc; }
   .bc-slide__wrapper {
     border: solid 1px #ddd; }
   .bc-slide__title {
@@ -626,7 +629,7 @@ html, body {
     font-weight: 100;
     color: #444;
     letter-spacing: 8px;
-    margin: 30px 0 0 0; }
+    padding: 30px 0 0 0; }
     .bc-slide__title::first-letter {
       border-bottom: solid 2px #fff; }
 
@@ -942,6 +945,26 @@ html, body {
         display: block;
         color: #fff;
         left: 26px; }
+  .bc-profile__scroller {
+    position: fixed;
+    /* border: solid 1px red; */
+    width: 36px;
+    height: 44px;
+    bottom: 20px;
+    right: 20px;
+    background: url(../assets/icons/mouse-down.svg) no-repeat 100% 100%;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.5s;
+    -webkit-animation-name: SCROLLER;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 1s;
+    animation-name: SCROLLER;
+    animation-timing-function: ease-out;
+    animation-duration: 2s; }
+    .bc-profile__scroller:hover {
+      opacity: 0.7;
+      bottom: 15px; }
 
 @-webkit-keyframes MOVE-PROFILE-ENITY {
   from {
@@ -954,6 +977,14 @@ html, body {
     background: #3d3d3d; }
   to {
     background: rgba(61, 61, 61, 0.8); } }
+
+@-webkit-keyframes SCROLLER {
+  0% {
+    -webkit-transform: translatex(200%); }
+  50% {
+    -webkit-transform: translatex(200%); }
+  100% {
+    -webkit-transform: translatex(0%); } }
 
 .bc-activity {
   position: relative;
@@ -1034,3 +1065,97 @@ html, body {
     left: 0; }
   .bc-carousel .bc-carousel__nav-right {
     right: 0; }
+
+.bc-skill {
+  display: inline-block;
+  width: 100%;
+  height: 200px;
+  float: left;
+  border: solid 1px #fff;
+  cursor: pointer;
+  text-decoration: none; }
+  .bc-skill__img {
+    display: inline-block;
+    height: 80px;
+    width: 100%; }
+  .bc-skill__label {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px; }
+  .bc-skill--blue {
+    background-color: #146892; }
+  .bc-skill--blue-lt {
+    background-color: #1674a3; }
+  .bc-skill--blue-dk {
+    background-color: #125c81; }
+
+.bc-timeline {
+  position: relative;
+  margin-top: 60px; }
+  .bc-timeline:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-top: solid 1px #fff;
+    top: 175px; }
+  .bc-timeline__item {
+    position: relative;
+    height: 350px;
+    width: 150px;
+    float: left;
+    margin-left: 60px; }
+    .bc-timeline__item:nth-child(even) .bc-timeline__item-data {
+      top: auto;
+      bottom: 0; }
+      .bc-timeline__item:nth-child(even) .bc-timeline__item-data:before {
+        top: -36px; }
+      .bc-timeline__item:nth-child(even) .bc-timeline__item-data:after {
+        top: -16px; }
+      .bc-timeline__item:nth-child(even) .bc-timeline__item-data > span {
+        top: -68px; }
+    .bc-timeline__item-data {
+      position: absolute;
+      height: 150px;
+      min-width: 100;
+      top: 0;
+      box-shadow: 1px 2px 3px #409991;
+      transition: all 0.5s;
+      border: solid 1px #fff;
+      padding: 15px;
+      cursor: pointer;
+      background: #fff; }
+      .bc-timeline__item-data:before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: solid 4px #fff;
+        top: 165px;
+        border-radius: 20px;
+        left: 62px;
+        box-shadow: 1px 2px 4px #409991;
+        background: #409991; }
+      .bc-timeline__item-data:after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 16px;
+        border-left: solid 2px #fff;
+        top: 150px;
+        left: 71px; }
+      .bc-timeline__item-data:hover {
+        background: #fff; }
+      .bc-timeline__item-data > span {
+        position: absolute;
+        top: 185px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        font-weight: 100;
+        left: 50px;
+        color: #fff; }
+    .bc-timeline__item-img {
+      height: 50px; }
