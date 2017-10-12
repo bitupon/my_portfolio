@@ -1,0 +1,34 @@
+
+.#{$bc}-contact{    
+    position: absolute;
+    padding: 30px;
+    height: 420px;
+    top: 50px;
+    left: -100px;
+    right: 0;
+    background: #303336;//#1e2b31;
+
+    &__header{
+        color: #fce7aa;
+        font-weight: 100;
+    }
+
+    &__info{
+         @extend #list;
+         margin-bottom:30px;
+        li{
+            position: relative;
+            color:#ccc;
+            padding-left: 20px;
+           &:before{
+                content: "";
+                border-top: solid 1px #ccc;
+                width: 10px;
+                height: 2px;
+                position: absolute;
+                top: 10px;
+                left: 0;
+           }
+        }
+    }
+}

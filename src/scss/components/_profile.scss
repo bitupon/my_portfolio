@@ -4,7 +4,8 @@
 
     &__landing{
         height: 100%;
-        background: url("./../assets/profile-cover.jpg") fixed no-repeat;
+        //background: url("./../assets/profile-cover.jpg") fixed no-repeat;
+        background: url("./../assets/bg/bg-3.jpg") fixed no-repeat;
         background-size: 100% 100%;
         background-repeat: no-repeat;   
         -webkit-animation-name: MOVE-PROFILE-ENITY;          
@@ -20,7 +21,7 @@
         padding: 40px;
         height: 100%;       
         margin: 10px;
-        background: rgba(61,61,61,.8);
+        background: rgba(61,61,61,.9);
         -webkit-animation-name: EASE-BANNER-BG;          
         -webkit-animation-timing-function: ease;
         -webkit-animation-duration: 1s;        
@@ -282,6 +283,7 @@
         }
     }
 }
+
 
 @-webkit-keyframes MOVE-PROFILE-ENITY {
 	from {

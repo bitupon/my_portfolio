@@ -456,7 +456,7 @@ html, body {
   -o-user-select: none;
   user-select: none; }
 
-#list, .bc-header__nav-social, .bc-profile__social, .bc-profile__activities ul, .bc-profile__nav ul {
+#list, .bc-header__nav-social, .bc-profile__social, .bc-profile__activities ul, .bc-profile__nav ul, .bc-skill__img, .bc-contact__info {
   list-style: none;
   padding: 0;
   margin: 0; }
@@ -592,10 +592,12 @@ html, body {
     z-index: 20; }
     .bc-slide--red .bc-slide__title {
       color: #af1c0c; }
-  .bc-slide--yellow {
-    background-color: #fad260;
+  .bc-slide--skills {
+    background: url("./../assets/bg/bg-11.jpg") fixed no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     z-index: 30; }
-    .bc-slide--yellow .bc-slide__title {
+    .bc-slide--skills .bc-slide__title {
       color: #916d05; }
   .bc-slide--green {
     background-color: #84cbc5;
@@ -614,11 +616,13 @@ html, body {
   .bc-slide--orange {
     background-color: #f59364;
     z-index: 80; }
-  .bc-slide--black {
-    background-color: #444444;
+  .bc-slide--contact {
+    background: url("./../assets/bg/bg-6.jpg") fixed no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     z-index: 90; }
-    .bc-slide--black .bc-slide__title {
-      color: #ccc; }
+    .bc-slide--contact .bc-slide__title {
+      color: #444; }
   .bc-slide__wrapper {
     border: solid 1px #ddd; }
   .bc-slide__title {
@@ -745,10 +749,11 @@ html, body {
 .bc-form-control {
   border-radius: 0;
   padding: 12px !important;
-  border: 1px solid #ccc !important;
+  border: 1px solid transparent !important;
   box-shadow: none;
   font-size: 16px;
-  height: auto; }
+  height: auto;
+  transition: all 0.5s; }
   .bc-form-control:focus {
     background-color: #f5f5f5 !important; }
   .bc-form-control.error {
@@ -757,33 +762,34 @@ html, body {
       position: absolute;
       font-size: 10px;
       color: #b30000; }
-  .bc-form-control--tr {
-    background-color: transparent;
-    border: 1px solid #404248 !important;
-    color: #fff; }
-    .bc-form-control--tr:focus {
-      background-color: transparent !important;
-      border: 1px solid #66fcf1 !important; }
 
 .bc-btn {
   padding: 12px 30px;
   border-radius: 0;
   background: transparent;
-  border: solid 2px #66fcf1;
+  border: solid 2px #444;
   color: #fff;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  cursor: pointer;
   transition: all .8s; }
   .bc-btn:hover, .bc-btn:focus, .bc-btn:active {
-    color: #000;
-    background-color: #66fcf1; }
+    color: #fff;
+    background-color: #444; }
+  .bc-btn--yellow {
+    border: solid 2px #916d05;
+    color: #916d05; }
+    .bc-btn--yellow:hover, .bc-btn--yellow:focus, .bc-btn--yellow:active {
+      color: #fff;
+      background-color: #916d05;
+      border: solid 2px #916d05; }
 
 .bc-profile {
   height: 100%; }
   .bc-profile__landing {
     height: 100%;
-    background: url("./../assets/profile-cover.jpg") fixed no-repeat;
+    background: url("./../assets/bg/bg-3.jpg") fixed no-repeat;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     -webkit-animation-name: MOVE-PROFILE-ENITY;
@@ -797,7 +803,7 @@ html, body {
     padding: 40px;
     height: 100%;
     margin: 10px;
-    background: rgba(61, 61, 61, 0.8);
+    background: rgba(61, 61, 61, 0.9);
     -webkit-animation-name: EASE-BANNER-BG;
     -webkit-animation-timing-function: ease;
     -webkit-animation-duration: 1s;
@@ -1067,31 +1073,51 @@ html, body {
     right: 0; }
 
 .bc-skill {
+  position: relative;
   display: inline-block;
   width: 100%;
   height: 200px;
   float: left;
+  overflow: hidden;
   border: solid 1px #fff;
   cursor: pointer;
-  text-decoration: none; }
-  .bc-skill__img {
-    display: inline-block;
-    height: 80px;
-    width: 100%; }
-  .bc-skill__label {
-    display: inline-block;
-    text-decoration: none;
+  text-decoration: none;
+  transition: all 0.35s ease-in-out; }
+  .bc-skill__title {
+    font-size: 25px;
+    color: #fff;
+    font-weight: 100;
     text-align: center;
+    padding: 30px 0px 20px 0; }
+  .bc-skill__desc {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
     width: 100%;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2px; }
-  .bc-skill--blue {
-    background-color: #146892; }
-  .bc-skill--blue-lt {
-    background-color: #1674a3; }
-  .bc-skill--blue-dk {
-    background-color: #125c81; }
+    color: #fff;
+    padding: 20px;
+    top: 65px;
+    text-align: center;
+    transition: all 0.35s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%); }
+  .bc-skill:hover {
+    background: #444; }
+    .bc-skill:hover .bc-skill__desc {
+      opacity: .8;
+      visibility: visible;
+      transform: translateY(0%); }
+  .bc-skill__img {
+    display: block;
+    padding: 0 15px; }
+    .bc-skill__img-item {
+      width: 60px;
+      height: 60px;
+      float: left;
+      margin: 0 5px 5px 5px; }
+      .bc-skill__img-item img {
+        width: 100%; }
 
 .bc-timeline {
   position: relative;
@@ -1159,3 +1185,48 @@ html, body {
         color: #fff; }
     .bc-timeline__item-img {
       height: 50px; }
+
+.bc-contact {
+  position: absolute;
+  padding: 30px;
+  height: 420px;
+  top: 50px;
+  left: -100px;
+  right: 0;
+  background: #303336; }
+  .bc-contact__header {
+    color: #fce7aa;
+    font-weight: 100; }
+  .bc-contact__info {
+    margin-bottom: 30px; }
+    .bc-contact__info li {
+      position: relative;
+      color: #ccc;
+      padding-left: 20px; }
+      .bc-contact__info li:before {
+        content: "";
+        border-top: solid 1px #ccc;
+        width: 10px;
+        height: 2px;
+        position: absolute;
+        top: 10px;
+        left: 0; }
+
+.bc-feedback {
+  height: 500px;
+  padding: 50px 30px;
+  background: #fce7aa; }
+
+.bc-copyright {
+  display: block;
+  padding: 30px 0 0 0;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 100;
+  letter-spacing: 2px; }
+  .bc-copyright__credit {
+    display: block;
+    padding-top: 8px;
+    text-transform: uppercase; }
+  .bc-copyright__text {
+    display: inline-block; }

@@ -105,7 +105,7 @@ $(function(){
 		//This is the main meat of the app 
 		var YPos = 0;
 		$('.decades > .decade').each( function (index, el) {
-			YPos += 1000; 			
+			YPos += 2000; 			
 			$('.bc-profile .bc-profile__nav > ul').append('<li><a class="bc-profile__nav-item" data-position="'+YPos+'" href="#'+$(this).attr('id')+'"><span class="bc-profile__nav-title">'+$(this).data('nav')+'</span></a></li>'); 
 		}); 
 		

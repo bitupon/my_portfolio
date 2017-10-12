@@ -25,12 +25,17 @@
         }
    }
 
-   &--yellow{
-        background-color: #fad260;
+   &--skills{
+        //background-color: #fad260;
+        background: url("./../assets/bg/bg-11.jpg") fixed no-repeat;
+        background-size: 100% 100%;
+        background-repeat: no-repeat; 
         z-index: 30;
         #{$slide}__title{
             color: #916d05;
         }
+
+         
    }
 
    &--green{
@@ -61,12 +66,20 @@
         z-index: 80;
    }
 
-   &--black{
-        background-color: #444444;
+   &--contact{
+        background: url("./../assets/bg/bg-6.jpg") fixed no-repeat;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;   
+        // -webkit-animation-name: MOVE-PROFILE-ENITY;          
+        // -webkit-animation-timing-function: ease;
+        // -webkit-animation-duration: 1s;        
+        // animation-name: ZOOM-IN-BG-COVER;  
+        // animation-timing-function: ease;
+        // animation-duration: 2s;
         z-index: 90;
          #{$slide}__title{
-            color: #ccc;
-        }
+            color: #444;
+        }    
    }
    
     &__wrapper{
