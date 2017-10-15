@@ -5,8 +5,8 @@
 
  module.exports = function (gulp, plugins,paths,clean) {
     var scriptsArr = [
-        paths.scripts + 'scripts1.js',    
-        paths.scripts + 'scripts2.js',     
+        //paths.scripts + 'scripts1.js',    
+        paths.scripts + 'scripts2.js'
     ];
 
    

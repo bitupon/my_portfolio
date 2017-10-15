@@ -22,8 +22,8 @@
 		<div class="bc-profile" id="skrollr-body">		
 			<!-- FRONT -->
 			
-			<div class="bc-slide__wrapper">
-				<div id="bcSlideAboutMe" class="bc-profile__landing">
+			<div class="bc-slide__wrapper decades" data-0="position: fixed; top: 100%; width: 100%; height: 100%;" data-1000="top: 0%; " >
+				<div id="bcSlideAboutMe" class="bc-profile__landing decade" data-nav="about me" data-0="z-index: 1; position: fixed; top: 0; left: 0; bottom: 0; left: 0; margin: auto; height: 100%; width: 100%; " data-1000="z-index: 0;">
 					<section class="bc-profile__banner">
 						<section class="bc-profile__pic">
 							<img src="./assets/profile-pic.png" />					
@@ -68,8 +68,8 @@
 						</section>					
 					</section>		
 				</div>
-        		<section id="bcSlideWork" class="bc-slide bc-slide--blue">
-					<h2 class="bc-slide__title" data-0="">My Featured Work</h2>
+        		<section id="bcSlideWork" class="bc-slide bc-slide--blue page decade" data-nav="Featured Work" data-1000="top: 100%;" data-2000="top: 0%;">
+					<h2 class="bc-slide__title">My Featured Work</h2>
         			<div class="bc-module p-t-5">
 						<h3 class="bc-module__title">Some Heading</h3>
 						<p class="bc-module__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus nisi, autem, possimus nobis praesentium eveniet quam ex dolor! Consectetur sint commodi adipisci ea vel cupiditate, fuga tempora pariatur dicta repellat.</p>	
@@ -77,21 +77,21 @@
 						<div class="row">
 							<div class="col-md-3 p-a-0" style="margin-top: 50px">
 								<div class="bc-tile bc-tile--blue-lt">
-									<h3 class="bc-tile__title"><a href="./projects/bod/home.html">BOD</a></h3>
+									<h3 class="bc-tile__title">BOD</h3>
 									<span class="bc-tile__nav"><i class="bc-tile__nav-icon" aria-hidden="true"></i></span>
 								</div>
 								<div class="bc-tile bc-tile--blue">
-									<h3 class="bc-tile__title"><a href="./projects/bsg/dashboard.html">BSG</a></h3>
+									<h3 class="bc-tile__title">BSG</h3>
 									<span class="bc-tile__nav"><i class="bc-tile__nav-icon" aria-hidden="true"></i></span>
 								</div>								
 							</div>
 							<div class="col-md-3 p-a-0">
 								<div class="bc-tile bc-tile--blue">
-									<h3 class="bc-tile__title"><a href="./projects/dgl/1.dashboard.html">DGL</a></h3>
+									<h3 class="bc-tile__title">DGL</h3>
 									<span class="bc-tile__nav"><i class="bc-tile__nav-icon" aria-hidden="true"></i></span>
 								</div>											
 								<div class="bc-tile bc-tile--blue-dk">
-									<h3 class="bc-tile__title"><a href="./projects/ira/">IRA</a></h3>
+									<h3 class="bc-tile__title">IRA</h3>
 									<span class="bc-tile__nav"><i class="bc-tile__nav-icon" aria-hidden="true"></i></span>
 								</div>								
 							</div>
@@ -111,7 +111,7 @@
 									<span class="bc-tile__nav"><i class="bc-tile__nav-icon" aria-hidden="true"></i></span>
 								</div>
 								<div class="bc-tile bc-tile--blue">
-									<h3 class="bc-tile__title"><a href="./projects/vbank/">VBank</a></h3>
+									<h3 class="bc-tile__title">Kirro Theme 1</h3>
 									<span class="bc-tile__nav"><i class="bc-tile__nav-icon" aria-hidden="true"></i></span>
 								</div>								
 							</div>
@@ -121,7 +121,7 @@
 										
 					</div>
         		</section>
-        		<section id="bcSlideSkills" class="bc-slide bc-slide--skills">
+        		<section id="bcSlideSkills" class="bc-slide bc-slide--skills page decade " data-nav="Skills" data-2000="top: 100%;" data-3000="top: 0%;">
 					<h2 class="bc-slide__title">My Skills</h2>
 					<div class="bc-module p-t-5">	
 						<h3 class="bc-module__title">Some Heading</h3>
@@ -205,7 +205,7 @@
 						</div>			
 					</div>
         		</section>        	
-        		<section id="bcSlideBrand" class="bc-slide bc-slide--green">
+        		<section id="bcSlideBrand" class="bc-slide bc-slide--green page decade" data-nav="Brand" data-3000="top: 100%;" data-4000="top: 0%;">
 					<h2 class="bc-slide__title">Brand I have worked with</h2>
         			<div class="bc-module p-t-5">
 						<h3 class="bc-module__title">Some Heading</h3>
@@ -239,7 +239,7 @@
 						</section>
 					</div>
         		</section>
-        		<section id="bcSlideContact" class="bc-slide bc-slide--black  bc-slide--contact">
+        		<section id="bcSlideContact" class="bc-slide bc-slide--black page decade bc-slide--contact" data-nav="Contact Me" data-4000="top: 100%;" data-5000="top: 0%;">
 					<h2 class="bc-slide__title">Contact Me</h2>
         			<div class="bc-module p-t-5">
 						<div class="row">
@@ -304,20 +304,20 @@
 						</div>
 					</div>
         		</section>        	
-        	</div>
+        	</div>	
 			<div class="bc-profile__scroller">
 				
 			</div>
-			
-			<nav class="bc-profile__nav">
-					<ul>	
-						<li><a class="bc-profile__nav-item active" href="#bcSlideAboutMe"><span class="bc-profile__nav-title">about me</span></a></li>
-						<li><a class="bc-profile__nav-item"  href="#bcSlideWork"><span class="bc-profile__nav-title">Featured Work</span></a></li>
-						<li><a class="bc-profile__nav-item"  href="#bcSlideSkills"><span class="bc-profile__nav-title">Skills</span></a></li>
-						<li><a class="bc-profile__nav-item"  href="#bcSlideBrand"><span class="bc-profile__nav-title">Brand</span></a></li>
-						<li><a class="bc-profile__nav-item"  href="#bcSlideContact"><span class="bc-profile__nav-title">Contact Me</span></a></li>
-					</ul>
-				</nav>
+        
 	</main>
+	
+		
 </body>
-</html>							
+</html>
+
+
+
+
+							
+									
+								

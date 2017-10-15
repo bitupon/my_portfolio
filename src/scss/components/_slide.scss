@@ -1,12 +1,9 @@
 .#{$bc}-slide{
-    $slide : &;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    min-height: 700px;
-    top: 100%;
-    overflow: hidden;
-    height: 120%;  
+    $slide : &;   
+    position: relative;  
+    width: 100%;   
+    overflow: hidden;   
+    padding: 40px 0;
 
     &--blue{
         background-color: #7ec8ed;
@@ -68,6 +65,7 @@
 
    &--contact{
         background: url("./../assets/bg/bg-6.jpg") fixed no-repeat;
+        height: 100%;
         background-size: 100% 100%;
         background-repeat: no-repeat;   
         // -webkit-animation-name: MOVE-PROFILE-ENITY;          
@@ -83,7 +81,8 @@
    }
    
     &__wrapper{
-        border:solid 1px #ddd;       
+        position: relative;
+       height: 100%;     
     }
 
     &__title{
@@ -94,7 +93,7 @@
 		font-weight: 100;
 		color: #444;
 		letter-spacing: 8px;
-		padding: 30px 0 0 0;
+		//padding: 30px 0 0 0;
 
 		&::first-letter{			
 			border-bottom: solid 2px #fff;		

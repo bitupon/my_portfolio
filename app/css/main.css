@@ -488,6 +488,9 @@ html, body {
 .f-height {
   height: 100%; }
 
+.bc-main {
+  height: 100%; }
+
 .bc-content {
   height: calc(100% - 100px); }
 
@@ -575,13 +578,10 @@ html, body {
     top: 150%; }
 
 .bc-slide {
-  position: absolute;
-  height: 100%;
+  position: relative;
   width: 100%;
-  min-height: 700px;
-  top: 100%;
   overflow: hidden;
-  height: 120%; }
+  padding: 40px 0; }
   .bc-slide--blue {
     background-color: #7ec8ed;
     z-index: 10; }
@@ -618,13 +618,15 @@ html, body {
     z-index: 80; }
   .bc-slide--contact {
     background: url("./../assets/bg/bg-6.jpg") fixed no-repeat;
+    height: 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     z-index: 90; }
     .bc-slide--contact .bc-slide__title {
       color: #444; }
   .bc-slide__wrapper {
-    border: solid 1px #ddd; }
+    position: relative;
+    height: 100%; }
   .bc-slide__title {
     position: relative;
     text-align: center;
@@ -632,8 +634,7 @@ html, body {
     text-transform: uppercase;
     font-weight: 100;
     color: #444;
-    letter-spacing: 8px;
-    padding: 30px 0 0 0; }
+    letter-spacing: 8px; }
     .bc-slide__title::first-letter {
       border-bottom: solid 2px #fff; }
 
@@ -719,6 +720,7 @@ html, body {
       top: 70px; }
 
 .bc-tile {
+  position: relative;
   display: inline-block;
   width: 100%;
   height: 170px;
@@ -726,25 +728,63 @@ html, body {
   border-top: solid 1px #7ec8ed;
   border-right: solid 1px #7ec8ed;
   cursor: pointer;
-  text-decoration: none; }
+  text-decoration: none;
+  padding: 30px; }
   .bc-tile__img {
     display: inline-block;
     height: 80px;
     width: 100%; }
-  .bc-tile__label {
+  .bc-tile__title {
     display: inline-block;
     text-decoration: none;
     text-align: center;
     width: 100%;
     text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 20px;
+    margin-top: 45px; }
+    .bc-tile__title a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.2s; }
+      .bc-tile__title a:hover, .bc-tile__title a:visited, .bc-tile__title a:active {
+        color: #fff;
+        text-decoration: none; }
   .bc-tile--blue {
     background-color: #146892; }
   .bc-tile--blue-lt {
     background-color: #1674a3; }
   .bc-tile--blue-dk {
     background-color: #125c81; }
+  .bc-tile__nav {
+    position: absolute;
+    right: 0;
+    top: 35%;
+    margin: auto;
+    right: 30px;
+    opacity: 0;
+    transition: all 1s; }
+    .bc-tile__nav-icon {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      color: #fff;
+      box-sizing: border-box;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      margin: 10px;
+      width: 40px;
+      height: 40px;
+      border-width: 1px 1px 0 0;
+      border-style: solid; }
+  .bc-tile:hover .bc-tile__nav {
+    opacity: 1;
+    right: 10px; }
+  .bc-tile:hover .bc-tile__title a {
+    font-weight: 600;
+    letter-spacing: 2px; }
 
 .bc-form-control {
   border-radius: 0;
@@ -753,7 +793,8 @@ html, body {
   box-shadow: none;
   font-size: 16px;
   height: auto;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  background: #fdf2d0; }
   .bc-form-control:focus {
     background-color: #f5f5f5 !important; }
   .bc-form-control.error {
@@ -786,8 +827,10 @@ html, body {
       border: solid 2px #916d05; }
 
 .bc-profile {
-  height: 100%; }
+  height: 100%;
+  overflow: auto; }
   .bc-profile__landing {
+    position: relative;
     height: 100%;
     background: url("./../assets/bg/bg-3.jpg") fixed no-repeat;
     background-size: 100% 100%;
@@ -802,7 +845,7 @@ html, body {
   .bc-profile__banner {
     padding: 40px;
     height: 100%;
-    margin: 10px;
+    margin: 0 10px 10px 10px;
     background: rgba(61, 61, 61, 0.9);
     -webkit-animation-name: EASE-BANNER-BG;
     -webkit-animation-timing-function: ease;
@@ -912,7 +955,7 @@ html, body {
         color: #fff !important; }
   .bc-profile__activities {
     height: 150px;
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     left: 0; }
@@ -945,15 +988,14 @@ html, body {
           letter-spacing: 2px;
           transition: all 0.5s;
           color: transparent; }
-      .bc-profile__nav ul li.active a {
-        background: transparent; }
+        .bc-profile__nav ul li .bc-profile__nav-item.active {
+          background: transparent; }
       .bc-profile__nav ul li:hover .bc-profile__nav-title {
         display: block;
         color: #fff;
         left: 26px; }
   .bc-profile__scroller {
     position: fixed;
-    /* border: solid 1px red; */
     width: 36px;
     height: 44px;
     bottom: 20px;
@@ -967,7 +1009,8 @@ html, body {
     -webkit-animation-duration: 1s;
     animation-name: SCROLLER;
     animation-timing-function: ease-out;
-    animation-duration: 2s; }
+    animation-duration: 2s;
+    z-index: 1000; }
     .bc-profile__scroller:hover {
       opacity: 0.7;
       bottom: 15px; }
@@ -1088,7 +1131,7 @@ html, body {
     color: #fff;
     font-weight: 100;
     text-align: center;
-    padding: 30px 0px 20px 0; }
+    padding: 70px 0px 20px 0; }
   .bc-skill__desc {
     position: absolute;
     top: 0px;
@@ -1202,20 +1245,20 @@ html, body {
     .bc-contact__info li {
       position: relative;
       color: #ccc;
-      padding-left: 20px; }
-      .bc-contact__info li:before {
-        content: "";
-        border-top: solid 1px #ccc;
-        width: 10px;
-        height: 2px;
-        position: absolute;
-        top: 10px;
-        left: 0; }
+      padding-left: 10px; }
 
 .bc-feedback {
+  position: relative;
   height: 500px;
   padding: 50px 30px;
   background: #fce7aa; }
+  .bc-feedback__title {
+    margin: 0;
+    font-size: 40px;
+    font-weight: 100;
+    color: #8e6b05;
+    line-height: 1;
+    margin-bottom: 20px; }
 
 .bc-copyright {
   display: block;
