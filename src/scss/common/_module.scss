@@ -1,7 +1,7 @@
 .#{$bc}-module{
 	display: block;
     height: 100%;   
-    width: 1200px;
+    max-width: 1200px;
     margin: auto;
 	
 	&-wrapper{
@@ -9,10 +9,7 @@
 	}
 
 	&__title{
-		position: relative;
-		//text-align: center;
-		//font-size: 40px;
-		//text-transform: uppercase;
+		position: relative;	;
 		font-weight: 100;
 		color: #444;
 		letter-spacing: 4px;
@@ -26,6 +23,12 @@
 	&__desc{
 		padding-bottom: 20px;
     	border-bottom: dashed 1px #abdbf3;
+		position: relative;
+		font-weight: 100;
+		color: #444;
+		letter-spacing: 2px;
+		margin: 10px 0;
+		font-size: 16px;
 	}
 
 	&__content{			

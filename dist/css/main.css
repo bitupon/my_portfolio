@@ -529,7 +529,7 @@ html, body {
 .bc-module {
   display: block;
   height: 100%;
-  width: 1200px;
+  max-width: 1200px;
   margin: auto; }
   .bc-module__title {
     position: relative;
@@ -539,7 +539,13 @@ html, body {
     margin: 10px 0; }
   .bc-module__desc {
     padding-bottom: 20px;
-    border-bottom: dashed 1px #abdbf3; }
+    border-bottom: dashed 1px #abdbf3;
+    position: relative;
+    font-weight: 100;
+    color: #444;
+    letter-spacing: 2px;
+    margin: 10px 0;
+    font-size: 16px; }
   .bc-module__content {
     padding-top: 25px; }
 
@@ -581,7 +587,7 @@ html, body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 40px 0; }
+  padding: 40px; }
   .bc-slide--blue {
     background-color: #7ec8ed;
     z-index: 10; }
@@ -637,6 +643,14 @@ html, body {
     letter-spacing: 8px; }
     .bc-slide__title::first-letter {
       border-bottom: solid 2px #fff; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (min-width: 320px) and (max-width: 780px) {
+  .bc-slide--contact {
+    height: auto; } }
+
+@media only screen and (min-width: 320px) and (max-width: 780px) {
+  .bc-slide--contact {
+    height: auto; } }
 
 .bc-header {
   position: relative;
@@ -758,6 +772,10 @@ html, body {
     background-color: #1674a3; }
   .bc-tile--blue-dk {
     background-color: #125c81; }
+  .bc-tile--m-t-50 {
+    margin-top: 50px; }
+  .bc-tile--m-t-80 {
+    margin-top: 80px; }
   .bc-tile__nav {
     position: absolute;
     right: 0;
@@ -785,6 +803,22 @@ html, body {
   .bc-tile:hover .bc-tile__title a {
     font-weight: 600;
     letter-spacing: 2px; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (min-width: 320px) and (max-width: 780px) {
+  .bc-tile {
+    margin-bottom: 10px; }
+    .bc-tile--m-t-50 {
+      margin-top: 0; }
+    .bc-tile--m-t-80 {
+      margin-top: 0; } }
+
+@media only screen and (min-width: 320px) and (max-width: 780px) {
+  .bc-tile {
+    margin-bottom: 10px; }
+    .bc-tile--m-t-50 {
+      margin-top: 0; }
+    .bc-tile--m-t-80 {
+      margin-top: 0; } }
 
 .bc-form-control {
   border-radius: 0;
@@ -840,12 +874,11 @@ html, body {
     -webkit-animation-duration: 1s;
     animation-name: ZOOM-IN-BG-COVER;
     animation-timing-function: ease;
-    animation-duration: 2s;
-    background-color: #3d3d3d; }
+    animation-duration: 2s; }
   .bc-profile__banner {
     padding: 40px;
     height: 100%;
-    margin: 0 10px 10px 10px;
+    margin: 0 10px;
     background: rgba(61, 61, 61, 0.9);
     -webkit-animation-name: EASE-BANNER-BG;
     -webkit-animation-timing-function: ease;
@@ -953,8 +986,11 @@ html, body {
         color: #fff !important; }
       .bc-profile__activity:hover .bc-profile__activity-logo {
         color: #fff !important; }
+    .bc-profile__activity a {
+      display: inline-block;
+      width: 100%;
+      height: 100%; }
   .bc-profile__activities {
-    height: 150px;
     position: relative;
     bottom: 0;
     width: 100%;
@@ -1025,7 +1061,7 @@ html, body {
   from {
     background: #3d3d3d; }
   to {
-    background: rgba(61, 61, 61, 0.8); } }
+    background: rgba(61, 61, 61, 0.9); } }
 
 @-webkit-keyframes SCROLLER {
   0% {
@@ -1035,10 +1071,21 @@ html, body {
   100% {
     -webkit-transform: translatex(0%); } }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (min-width: 320px) and (max-width: 780px) {
+  .bc-profile__landing {
+    height: auto; }
+  .bc-profile__activities ul {
+    width: 450px; } }
+
+@media only screen and (min-width: 320px) and (max-width: 780px) {
+  .bc-profile__landing {
+    height: auto; }
+  .bc-profile__activities ul {
+    width: 450px; } }
+
 .bc-activity {
   position: relative;
   display: inline-block;
-  /* width: 120px; */
   text-align: center;
   margin: 0px 30px;
   padding: 15px;
@@ -1060,7 +1107,6 @@ html, body {
   .bc-activity__desc {
     position: absolute;
     color: #fff;
-    /* border: solid 1px red; */
     width: 100%;
     left: 0;
     bottom: -40px;
@@ -1131,7 +1177,8 @@ html, body {
     color: #fff;
     font-weight: 100;
     text-align: center;
-    padding: 70px 0px 20px 0; }
+    padding: 70px 0px 20px 0;
+    transition: all 0.35s ease-in-out; }
   .bc-skill__desc {
     position: absolute;
     top: 0px;
@@ -1146,11 +1193,14 @@ html, body {
     visibility: hidden;
     transform: translateY(100%); }
   .bc-skill:hover {
-    background: #444; }
+    background: #444;
+    border: solid 1px #444; }
     .bc-skill:hover .bc-skill__desc {
       opacity: .8;
       visibility: visible;
       transform: translateY(0%); }
+    .bc-skill:hover .bc-skill__title {
+      padding-top: 40px; }
   .bc-skill__img {
     display: block;
     padding: 0 15px; }
@@ -1247,6 +1297,24 @@ html, body {
       color: #ccc;
       padding-left: 10px; }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 780px) and (min-width: 320px) and (max-width: 780px) {
+  .bc-contact {
+    position: relative;
+    padding: 30px;
+    height: auto;
+    top: auto;
+    left: auto;
+    right: auto; } }
+
+@media only screen and (min-width: 320px) and (max-width: 780px) {
+  .bc-contact {
+    position: relative;
+    padding: 30px;
+    height: auto;
+    top: auto;
+    left: auto;
+    right: auto; } }
+
 .bc-feedback {
   position: relative;
   height: 500px;
@@ -1254,10 +1322,10 @@ html, body {
   background: #fce7aa; }
   .bc-feedback__title {
     margin: 0;
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 100;
     color: #8e6b05;
-    line-height: 1;
+    line-height: 1.2;
     margin-bottom: 20px; }
 
 .bc-copyright {

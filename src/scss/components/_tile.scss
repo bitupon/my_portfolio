@@ -57,6 +57,16 @@
 			background-color: #125c81;
 		}
 
+		&--m-t{
+			&-50{
+				margin-top: 50px;
+			}
+
+			&-80{
+				margin-top: 80px;
+			}
+		}
+
 		&__nav{			
 		    position: absolute;
 			right: 0;
@@ -100,3 +110,49 @@
 	}	
 }
 
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 780px)
+  and (min-width: 320px) 
+  and (max-width: 780px)
+  {
+    
+    .#{$bc}{
+		&-tile{
+			margin-bottom: 10px;
+			&--m-t{
+				&-50{
+					margin-top:0;
+				}
+
+				&-80{
+					margin-top:0;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media only screen 
+  and (min-width: 320px) 
+  and (max-width: 780px)
+  {
+    
+    .#{$bc}{
+		&-tile{
+			margin-bottom: 10px;
+			&--m-t{
+				&-50{
+					margin-top:0;
+				}
+
+				&-80{
+					margin-top:0;
+				}
+			}
+		}
+	}
+}

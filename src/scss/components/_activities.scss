@@ -1,9 +1,7 @@
 .#{$bc}-activity{
     $activity:&;
     position: relative;
-    display: inline-block;
-    /* width: 120px; */
-    //height: 120px;
+    display: inline-block;  
     text-align: center;
     margin: 0px 30px;
     padding: 15px;
@@ -37,8 +35,7 @@
 
     &__desc{
         position: absolute;
-        color: #fff;
-        /* border: solid 1px red; */
+        color: #fff;      
         width: 100%;
         left: 0;
         bottom: -40px;
