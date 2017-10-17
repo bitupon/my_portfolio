@@ -697,7 +697,8 @@ html, body {
   display: inline-block;
   position: fixed;
   top: 20px;
-  left: 20px; }
+  right: 20px;
+  z-index: 1000; }
   .bc-hamburger__icon {
     position: relative;
     display: inline-block;
